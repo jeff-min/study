@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index_Clock</title>
+    <style>
+        .form,
+        .greetings{
+            display: none;
+        }
+        .showing{
+            display: block;
+        }
+    </style>
+    <link rel="stylesheet" href="css/bg.css">
+</head>
+<body>
+    <div class="js-clock">
+        <h1>00:00</h1>
+    </div>
+    <form action="" class="js-form form">
+        <input type="text" placeholder="What is  your name ? ">
+    </form>
+    <!-- # HTML 과  javaScript 에서 class 이름을 어떻게 쓰는지에 대하여 -->
+    <!-- # 보통 css 이면 clock 으로 적을 텐대 이렇게 적지 않을 거임  -->
+    
+    <!-- # class 이름을 css 에서도 동일하게 쓰고 싶고  || 같은 이름으로 javaScript 에서도 사용하고 싶기 때문이지.  ||그래서 그냥 color 가 아닌 // 자바스크립트에서도 들어간다면 -->
+
+    <!-- todo )  js-clock -->
+    <h4 class="js-greetings greetings">dd</h4>
+    <form action="" class="js-toDoForm" >
+        <input type="text" placeholder="Write a to do">
+    </form>
+    <ul class="js-toDoList"></ul>
+
+    <span class="js-weather"></span>
+
+    <script src="js/index.js"></script>
+    <script src="js/clock.js"></script>
+    <script src="js/gretting.js"></script>
+
+    <script src="js/todo.js"></script>
+    <script src="js/bg.js"></script>
+    <script src="js/weather.js"></script>
+    <!-- todo ) 항상 작은 부분을 나눠서 작업한다. // js 부분을 세부작업으로 나눠서 진행 
+            @ 분할 정복 그래서 clock.js 부분을 따로 만듬.-->
+            
+</body>
+</html>

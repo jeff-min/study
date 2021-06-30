@@ -1,0 +1,117 @@
+body {
+  background-image: url("./images/bg.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "Varela Round", sans-serif;
+  text-align: center;
+  box-sizing: border-box;
+  margin: 0px;
+}
+
+h1 {
+  font-family: "Pacifico", cursive;
+  text-align: center;
+  font-size: 72px;
+}
+.image-box img{ 
+  width: 400px;
+  margin-top: 30px;
+}
+
+.start{
+  position: absolute;
+  transform: translate(-70px);
+
+  border: none;
+  background: none;
+  font-size: 20px;
+  font-family: bold;
+  width: 150px;
+  height: 50px;
+  border-radius: 8px;
+  z-index: -999;
+  cursor: pointer;
+
+  transition: all ease 2s 0s;
+  
+  animation-duration: 1s;
+  animation-name: test;
+
+}
+.span::after{
+  content: "Game Start";            /* 필수*/
+  position: absolute;       /* 이동 할려고 독자적으로 움직일 수 있게 해줌  */
+  transform: translate(-70px,12px);
+  font-size: 20px;
+  font-family: bold;
+  width: 150px;
+  height: 50px;
+  z-index: -9999;
+  opacity: 1;
+  
+}
+/* .start::before{ */
+  /* width: 150px;
+  height: 50px; */
+   /*  ! 가상공간이지만 .start의 가상아니 부피는 .start에 줘야 먹었음  */
+/* } */
+
+.start:hover{
+  background-color: #fff;
+  opacity: 0.2;
+  filter: blur(2px);  /* .start 에만 호버주면서 필터 준건대  / .span::after 에 contetn 까지 필터입힌거 처럼 보여지네 다른층이지만 blur 는 같은 위치에 다 효과보이게되나?*/
+  position: absolute;
+  
+  font-size: 20px;
+  font-family: bold;
+  width: 150px;
+  height: 50px;
+  z-index: -9999;
+  border: 1px solid black;
+
+
+}
+
+@keyframes test {
+  from {
+    border: none;
+    background-color: #fff;
+    filter: blur(2px);
+    border-radius: 8px;
+    opacity: 0;
+    z-index: -999;
+    width: 150px;
+    height: 50px;
+    
+  }
+
+  to {
+  
+  border: none;
+  background: none;
+  border-radius: 8px;
+  z-index: -999;
+  width: 150px;
+  height: 50px;
+  }
+}
+
+.input{
+  position: absolute;
+  transform: translate(-115px, 74px);
+  border-radius: 6px;
+  border: none;
+  height: 20px;
+  font-size:20px;
+  text-align: center;
+  /* padding-left: 적용 가능; */
+}
+
+.result{
+  
+  transform: translate( 10px ,120px);
+}
+
+.resultImpo{
+  transform: translate( 10px ,120px);
+}

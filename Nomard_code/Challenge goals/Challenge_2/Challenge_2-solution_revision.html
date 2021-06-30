@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge_2-solution_revision</title>
+
+    <style>
+        body {
+    font-family: sans-serif;
+    display: flex;
+    }
+
+    h2 {
+    color: white;
+    }
+
+    .bigScreen {
+    background-color: #f1c40f;
+    }
+
+    .mediumScreen {
+    background-color: #9b59b6;
+    }
+
+    .smallScreen {
+    background-color: #3498db;
+    }
+    </style>
+</head>
+<body class="mediumScreen">
+    <iframe src="https://codesandbox.io/embed/day-four-solution-y1vrn?fontsize=14&hidenavigation=1&theme=dark"
+        style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+        title="Day Four Solution"
+        allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+        sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+    >
+    </iframe>
+    <h2>Hello!</h2>
+    
+    <script>
+        // const title = document.querySelector("#title");
+        // title.innerHTML = "Hello!";
+        // title.style.color = "rgb(255, 255, 255)"
+        
+        // const ArrayColor = ["blue", "purple", "yellow"];     
+        // <!-- # 전과정 수업 내용에 관한거라 주석처리
+
+        // <!-- # Challenge_2 에서는 if / else  - DOM 에 배우고 // classList 를 배웠으니 이걸 사용해보자 
+
+
+            const body = document.body;
+            /* <!--? 변수로 body 를 주었지만 // 쓴적이 없다 body 태그와 document.body 와 뭔 차이인지도 모르겠고  */
+            /* <!--? 차이가 있다한들.....클래스 네임을 주고  없애고 하여 background-color 를 주는건대 왜  const body = document.body;  이 변수가 있어야 ... 작동이 되는거지..???*/
+            
+            /* <!--? body 태그에 classname 을 주는거고 // background-color 는 다른 박스에서도 사용 가능한거고 ... // document.body 는 변수로 선언만 하고 쓰이지 않았는데..??? 왜지?*/
+            const BIG_SCREEN = "bigScreen";
+            const MEDIUM_SCREEN = "mediumScreen";
+            const SMALL_SCREEN = "smallScreen";
+        
+        function resizeColor(){
+                                            
+            const WIDTH = window.innerWidth;
+                                                        // <!-- #  classList 를 배워서 이걸로 사용하셧음!!  //  이미 만들어진 css 에  // 
+            if (WIDTH > 1000) {                             // <!-- #  ClassList 를 통해 class 를 add(추가) 했다 remove (삭제)) 했다 다룸
+                body.classList.add(BIG_SCREEN);
+                body.classList.remove(MEDIUM_SCREEN);
+            } else if (WIDTH <= 1000 && WIDTH >= 500) {
+                body.classList.add(MEDIUM_SCREEN);
+                body.classList.remove(BIG_SCREEN, SMALL_SCREEN);        /* <!-- @ big 과 small 사이인 medium 은 BIG_SCREEN 과 SMALL_SCREEN 인 class 명을 */ 
+            } else {                                                 /* <!-- @ 각각 두개가 양끝에서 add 추가된 상태에서 오갈 수 있으니 같이 없애 줄 수 있게 둘다 적용 시킨 것  */
+                body.classList.remove(MEDIUM_SCREEN);                   
+                body.classList.add(SMALL_SCREEN);                        
+            }                                              
+        }
+        window.addEventListener("resize" ,resizeColor)
+
+            /* <!-- ! miss 인게 나는 else if안에 또 if 를 주었지..잘 작동은 함   */
+            /* <!-- # else 까지 조건이 내려오는데 순차적으로 이게 아니면 이조건 을 식으로 내려오다 보니 */
+            /* <!--# 중간 사이즈안에 if ()를 또 넣어 이중으로 해줘야 마지막까지 small 사이즈때 색을 변할 수 있게 하지  */
+            /* <!--#  // 안그러면 medium 사이즈에 다 충족해 버렸기 떄문에 ...난 그렇게했음.!! */
+    </script>
+</body>
+</html>

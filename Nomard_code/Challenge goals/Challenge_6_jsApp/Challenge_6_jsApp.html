@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge_6_jsApp</title>
+</head>
+<body>
+    <h1>Random Number Game</h1>
+    <h3></h3>
+    <form action="" oninput="x.value=parseInt(rangeBar.value)">
+        <input type="range" id="rangeBar" name=" selectBar" list="marks" min="0" max="201" step="10" value="0">
+        <output name ="x" for="rangeBar"></output> <br/>
+        
+        <datalist id="marks">
+            <option value="50"></option>
+            <option value="100"></option>
+            <option value="150"></option>
+            <option value="200"-></option>
+        </datalist>
+    </form>
+
+    <div class="userNumbers"></div>
+
+    <form class="chooseBox" onsubmit="return false;">
+        <label for="list">Guess the number:</label>
+        <input class="guessNumber" type="text" list="number" id="list" placeholder="write number"/>
+        <datalist id="number">
+            <option value="50"></option>
+            <option value="100"></option>
+            <option value="150"></option>
+            <option value="200"-></option>
+        </datalist>
+
+        <input class="submit" type="button" value="play!" onclick = "click" /> 
+    </form>
+
+    <div class="result"></div>      
+        
+
+    
+    <script src="js/Challenge_6_jsApp.js"></script>
+</body>
+</html>

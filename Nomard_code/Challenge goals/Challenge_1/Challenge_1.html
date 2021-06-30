@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Challenge_1</title>
+    </head>
+    <!-- 
+The text of the title should change when the mouse is on top of it.
+The text of the title should change when the mouse is leaves it.
+When the window is resized the title should change.             <!-- ! 여기서부터 window 얘기 하고 있었음 그래서 이후 이벤트는 window에 반응하게 했어야함.
+On right click the title should also change.                       <!-- ! 오른쪽 클릭을 못보고...추가를 안함.....ㅠ
+The colors of the title should come from a color from the colors array.
+DO NOT CHANGE .css, or .html files.
+ALL function handlers should be INSIDE of "superEventHandler"       <!-- ? superEventHandler 이게 왜 나왔나.. 함수명을 superEventHandler 이걸로 하라는건가 생각했는데..
+                                                                    <!-- ? color 를  array 를 만들어서 하라는거보니  superEventHandler인 Obiect 로 만들어서 활용 하란 소리였네... 
+                                                                    <!-- # 이건...solution 해답본 보고 알았네...ㅠ 
+IF ANY OF THE REQUIREMENTS ARE NOT FULFILLED YOU WILL GET AN ❌     <!-- @ today's Blueprint ...형식이 있더라..? 후 몰랐다 ...앞으로도 안보고 해볼 생각이다.
+
+-->
+    <body>
+        <h1 id="title">
+        This is a static template, there is no bundler or bundling involved!
+        </h1>
+
+        <script>
+        const title = document.querySelector("#title");
+        // title.style.color = "red";
+        const ArrayColor = ["blue", "red", "black", "green"];
+
+        function handleIn() {
+            // title.style.color = "blue";
+            title.style.color = ArrayColor[0];
+            title.innerHTML = "mouseover";
+        }
+        title.addEventListener("mouseover", handleIn);
+
+        function handleOut() {
+            // title.style.color = "red";
+            title.style.color = ArrayColor[1];
+            title.innerHTML = "mouseout";
+        }
+        title.addEventListener("mouseout", handleOut);
+
+        function handleResize() {
+            // title.style.color = "black";
+            title.style.color = ArrayColor[2];
+            title.innerHTML = "resize";
+        }
+        window.addEventListener("resize", handleResize);
+
+        function handleClick() {
+            // title.style.color = "green";
+            title.style.color = ArrayColor[3];
+            title.innerHTML = "mousedown";
+        }
+        title.addEventListener("mousedown", handleClick);
+        </script>
+    </body>
+</html>

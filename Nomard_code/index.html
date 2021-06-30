@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function</title>
+    <style>
+        body{
+            background-color: #ecf0f1;
+        }
+        h1{
+            color: #34495e;
+        }
+        .clicked {
+            color: #7f8c8d;
+        }
+        .btn{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="title">title</h1>
+    <h1 id="chapter">if /else</h1>
+    <h1 id="rightWay" class="btn" >CLICKED_CLASS</h1>
+    <pre>
+        What is the order of variable creation?
+변수 생성 순서 
+==> Create, Initialize, Use // 생성  , 초기화 , 사용
+
+
+let 으로 변수한것은 (업데이트) 바꿀 수 있고
+const 로 변수한것은 바꿀 수 없을 때 사용한다.
+var 는 예전 사용법 지금은 사용 x
+
+
+What are all the booleans?
+==>true, false
+
+
+What is the correct way of naming a const in JavaScript?
+자바스크립트에서 const 변수를 쓸 떄  naming 으로 맞게 한것은 ?
+==> camel 기법 (낙타) 
+==> 스페이스바가 나올때마다 첫알파벳만 대문자
+==>const somethingLikeThis = true;
+
+
+Array 는
+    목록 형식으로 데이터를 저장하는 방법입니다.
+Object 는
+    키-값 형식으로 정보를 저장하는 방법입니다.
+
+    Array 와 Object 차이점은
+    Object 는  각 Value 값의 이름을 지어 줄 수 있다는 것이지.  [ Key : Value ] 
+    Array 는  각 나열된 데이터 리스트 일 뿐 .                  [list]
+    <!-- @  Object 는   [ Key : Value ]  value 를 줄 수 있으므로 이렇게 Object 안에 함수도 만들어 줄 수 있다.
+        #   handleEnter: function() {},
+        #   handleEnter: function() {}
+-->
+
+Array 안에 Array  
+Array 안에 Object 
+Object 안에 Object 
+Object  안에 Array  
+Object  안에 Array  안에 Object   다 가능
+
+
+배열은 [0]부터 
+
+
+console.log()  의  log는
+console object 안에 있는 함수라는 뜻.
+console.log는 안에 메세지가 없이는 작동하지 않아.
+console.log 함수는 argument 를 무한하게 가질 수 있다.
+
+
+함수
+function 함수명 (변수명=함수 안에서 사용하게 될 이름  ){}
+function sayHello(potato){}
+
+변수명  = 이름인데  argument 라고 생각하자
+
+    </pre>
+
+    <script>
+        function sayHello(name , age){
+            console.log("Hello!",name, "you have" ,age ,"years of age");
+        }
+
+        sayHello("Jeff" , 15);
+
+        // <!-- @ 예시의 경우 , sayHello 함수는 2개 나머진 5개의 argument 뿐이야.
+        /*   
+
+        <!--  # javascript 가 하는 것은  "Jeff"값을  argument인 - name(변수명)라는 것에 넣고
+        <!--  # "Jeff" 를 받은  name 을 호출해  Hello Jeff 가  찍히는것
+            
+        <!--  @ 이와 같이  숫자 15 는 age 가 받을 준비가 되어 있음
+        <!--  so)   Hello Jeff you have 15 years of age 가 찍힘.
+        
+            <!--  that is ) 이게 외부에 있는 데이터를 읽는 함수를 만드는 방법.!!!
+                            함수에게 외부에 있는 데이터를 주는 방법
+            <!--  # 함수안에 있는 데이터를 읽는것 뿐만 아니라 외부에서도 가져올 수 있는것.
+                            CSS 에서 for : id 생각하면 될려나..
+
+
+- console은 object다.
+- console.log, alert 등을 내장함수(built-in function)이라고 한다.
+- 함수는 어떤 걸 수행하려는 한 부분으로, 원하는 만큼 쓸 수 있다.
+- 함수를 쓸 땐, funcition 함수명() {}
+- log도 함수인데, console object 안에 있는 함수라는 의미이다.
+- 함수명() 괄호 안에 들어가는 단어를 인자(argument)라고 한다. 또는 parameter.
+- argument는 변수와 비슷하다. 함수 안에서 사용하게 될 이름이다.
+- argument를 사용하는 것이 외부에 있는 데이터를 읽는 함수를 만드는 방법이다.
+
+
+
+<!--  #        function sayHello(name , age){
+<!--  #            console.log("Hello!" + name + "you have" + age + "years of age");
+<!--  #        }
+
+<!--  #        sayHello("Jeff" , 15);
+            <!--  ! "Hello!" + name + "you have" 옛날 방식
+            <!--  ! 이 + 방식으로 텍스트와  변수를 같이 쓰거나 / , 처음 방법 처럼 ,(콤마)를 많이 쓰게 되지...
+
+                    // 딱딱한 스트링 방식에 실증 나서 나온게 ``(백틱)스트링 
+                <!-- so ) 그럼 ""(더블땅모표) , ''(싱글따옴표) 딱딱한 스트링(문자열) 말고 섹쉬한 스트링(문자열)을 써보자
+                <!-- so ) 결론적으로 ``(백틱)  javascript 에서 훨씬 보기 좋음 
+                    <!-- that is ) 알다시피  javascript에는 텍스트를 써야하고 텍스트에 변수를 섞어 쓸 순 없지 // ``(백틱)은 섞어 쓸 수 있지.
+                    <!-- that is ) 우리가 많은 ,(콤마)를 쓰고 싶지 않다면 ``(백틱) 스트링을 쓰고 텍스트 와 ${변수명} 을 함꼐 쓰자.
+         */
+        
+        //  function sayHello(name , age){
+        //     console.log(`Hello! ${name} you have ${age} years of age`);
+        // }
+
+        // sayHello("Jeff" , 15);
+
+
+//<!-- ?        function sayHello(name , age){
+//<!-- ?            console.log(`Hello! ${name} you have ${age} years of age`);
+//<!-- ?        }
+
+//<!-- ?        const greetNicolas = sayHello("Jeff" , 15);
+
+//<!-- ?        console.log(greetNicolas)
+
+        /*
+        
+<!--  #          console.log(greetNicolas)의 값이 undefined인 이유
+
+<!--  #  1. greetNicolas의 변수 값은 sayHello 함수의 출력 값이다.
+<!--  #  2. sayHello 함수는 console.log로 인해 이미 출력되고 끝난 상태.
+<!--  #  3. 결과적으로 되돌아온 값(return)이 없기 때문에 정의되는 것이 없어 undefined라고 출력되는 것.
+
+        
+<!--  @    greetNicolas 가 undefined 가 되지 않길 원한다면 반환 할 수 있게 만들어 줘야한다.
+        */
+
+
+        function sayHello(name , age){
+            return (`Hello! ${name} you have ${age} years of age`);
+        }
+
+        const greetNicolas = sayHello("Jeff" , 15);
+        
+        console.log(greetNicolas)
+
+        /*
+<!--  #        greetNicolas는  sayHello 함수의 return 값과 같다.
+<!--  #        함수에 return 값을 써주지 않으면, greetNicolas 변수를 출력해도 값이 안나옴 //
+<!--  #        return의 기능이 함수 내부의 값을 외부로 꺼낼 수 있는 기능을 하기 때문에
+<!--  @        외부에서 반환해 사용할 수 있게 도와주는게 return 이다.
+        
+        */              
+
+        const calculatoe = {
+            plus: function(a,b){
+                return a + b
+            }
+        }
+        const plus = calculatoe.plus(5,5)
+        console.log(plus)
+
+//<!--  #  console 하고 calculatoe 는 객체이고
+//<!--  #  log() 인자를 가지는 함수  plus 도 2개의 인자(argument)를 가진 함수
+
+//<!--  $ parameter (매개변수)
+//<!--       # 함수의 정의 부분에 나열되어 있는 변수, 여기서는 plus 함수 정의시에 사용되는 a, b를 parameter(매개변수) 라고 한다.
+//<!--that is)           def plus(a, b):
+//<!--that is)           return a + b
+
+//<!--  $ argument (전달인자)
+//<!--       # 함수를 호출할때 전달 되는 실제 값, 여기서는 plus 라는 함수에 넣어주는 값 1, 2를 argument(전달인자)라고 한다.
+//<!--that is)           result = plus(1, 2)
+
+        console.log(document);                          //  document 는 HTML 을 대표한다.
+        const title = document.getElementById("title"); //  html 안에 있는 객체를 선택할 수 있다.
+                    //<!-- so) document 도 객체이며  // 그저 console 같이 쓰면 된다 생각.
+        console.log(title);
+        title.innerHTML = "Hi! From Js"
+        console.log(title);
+        title.style.color = "red"
+        
+
+ //<!-- #  우선 css와 같이 자바스크립트에서도 element를 선택할 수 있다. 그래서 변경할 수 있는 것.
+//<!--  @ 이게 javascript 할 수 있는 역할// 우리가 배울 모든 함수들은 DOM(Document Object Model) 형태로 변경 가능해
+// <!-- #    그말은 즉슨 html에 있는 모든 요소를 가져올 수 도 있고  자바스크립트로 선택한게 객체로 바꿀 수 있다.
+
+//<!-- that is) 이처럼 각종 html 문서를 감지하고 추가하고 변경하는 등의 것들을 js로 객체화 하는 것을 통해 바꿀 수 있다.
+
+
+        
+        /*
+        console
+        객체에는 log 메서드 말고도, 다양한 메서드들이 많이 존재합니다. 입문자분들께서는 log, dir, count, time, timeEnd 정도만 알아두시면 됩니다.
+        
+log의 친구로 warn, info, error가 있습니다. 똑같이 로깅하는데 로깅 디자인이 좀 다릅니다. log만 쓰기 지루할 때 쓰시면 됩니다.
+console.log는 참조를 로깅하기 때문에, 객체와 같이 내용물이 변할 수 있는 것들은 내용이 실시간으로 바뀝니다.
+객체를 깊은 복사하는 것은 비용이 많이 들기 때문에 객체가 아닌 값을 로깅하세요. 예를 들어 arr을 로깅하지 말고(arr은 배열 객체이므로) arr.length를 로깅하는 식으로 말이죠.
+
+
+        dir
+이번에는 dir 메서드에 대해 알아보겠습니다. log랑 함께 쓰면 편한데요. 객체는 dir, 나머지는 log로 로깅하면 편합니다. DOM 객체를 로깅해보겠습니다.
+        
+        count
+몇 번 호출되었나를 로깅하고 싶을 때 사용합니다. 인자는 카운터의 이름입니다.
+
+        time, timeEnd
+코드 수행 시간을 확인할 때 유용합니다. 인자는 타이머의 이름입니다. time과 timeEnd에 같은 타이머 이름을 주어야 정상적으로 작동합니다.
+*/
+        console.dir(title)
+    // 객체는 dir,로 쓰는게 좋다 // 열거해서 객체를 보여줌.
+    
+
+//<!-- @     const title = document.querySelector("#title");
+//<!-- #   querySelector 는 노드의 첫번째 자식을  반환한다.
+//<!-- #   querySelector 는 모든자식들 중에서 찾을거야 // 내가 원하는 객체를 // css 선택자를 사용하여
+    
+    // <!-- $ javaScript는 이벤트를에 반응하기 위해서 만들어졌다.
+    // <!-- $  이벤트는 웹사이트에서 발생하는 것들인데. 중요한건 이벤틀르 우리가 중간에 가로 챌 수 있다는거지.
+        //<!-- so) querySelector 아주아주 매우 유용해
+
+        function handleResize(){
+            console.log("I have been resized");
+        }
+
+        window.addEventListener("resize",handleResize);
+        // <!-- @           ("이벤트명",함수명)
+        // <!-- !           handleResize 와 handleResize() 차이
+        // <!-- !          ("resize",handleResize); 라고 적는건  handleResize 내가 필요한 시점에 함수를 호출 하는거고
+        // <!-- !          ("resize",handleResize()); 라고 적는건  handleResize() 지금 바로 호출 하라는거야.
+
+            // <!-- that is) handleResize()  은 원하지도 않은대 바로 함수 호출이되어서 함수가 먹히는거고  //
+            // <!-- that is) handleResize    는  resize 이벤트가 발생했을때  handleResize 함수를 먹이는거다.
+
+        function handleClick(){
+            title.style.color = "blue";
+        }
+        title.addEventListener("click",handleClick)
+
+
+        
+
+
+
+
+
+// chapter
+
+        /*
+        <!-- $ if-else 이 기본적으로 프로그래밍에서 어떻게 모든게 작동하는지 생각해보자.
+            
+            <!-- # if 는 조건이야  || if()  를 해주고 안에 조건을 넣는거지  || if (조건) {}
+            <!-- $  조건이란 뭐든 참을 의미 하면 다 넣을 수 있다.
+            <!-- # if (조건) { block }      || block 은 javascript 표현이야  || block엔   console.log  , alert 아무거나 와도 되고
+        */
+        // if (ture) {
+            // <!-- @ tures 니까 항상 참을 의미하겠지.
+        // }
+        if (10 >5) {
+            console.log("hi");
+        }
+        else{
+            console.log("ho");
+        }
+
+        
+        // <!-- that is ) 여기서   === 은 check 라고 생각하자 // 맞는지 안맞는지 체킹 해보는거야.
+        
+            if (10 === 5) {
+            console.log("hi");
+        }
+        else{
+            console.log("ho");
+        } /* <!-- ! 10 과 5 는 같지 않으니  fale 틀림으로 else 의 log 를 호출한거야 */
+
+            if (10 === '10') {
+            console.log("hi");
+        }
+        else{
+            console.log("ho");
+        } 
+            // <!-- # 10은 숫자이고   || '10' 문자열(string)이야 그러니 다르지.
+        
+                if (10 === '10') {
+            console.log("hi");
+        }
+        else if ("jeff" === "Jeff"){
+            console.log("hihihi")
+        }
+        else{
+            console.log("ho");
+        } 
+        // 순차적으로 참 거짓을 판별한다. 
+        //  같지 않으면 다음 조건을  / 같지 않으면 다음 조건을   / 같으면 log() 출력
+
+        /*
+        <!-- $ 피연산자 조건  | 다른 조건들을 합치게 한다.
+        */
+        if ( 15 > 5 && 'jeff' === 'jeff') { 
+            console.log("hi");
+        }
+        else{
+            console.log("ho");
+        } 
+        //  두 조건이 참이여야 함
+        // <!-- $ )   && 의 표시는  각 조건이 모두 참이여야함. (and 그리고의 느낌)
+        // <!-- $ )   || 의 표시는  각 조건이 하나만 참이여도. (or 또는)
+
+        // const age = prompt("How old are you?");
+        // console.log(age);
+        // <!-- !   prompt 는 오래된 자바스크립트야 더이상 쓰지 않아  alert 같은거야
+        // <!-- @   우린 html의 좋은 폼으로 나오게 할 수 도 있고 커스터마이징도 할 수 있지.
+
+        const age = prompt("How old are you?");
+        if( age >= 18 && age <= 21){
+            console.log("you can drink but you should not");
+        }else if(age > 21){
+            console.log('go ahed');
+        }else{
+            console.log('too young');
+        }
+
+
+
+        const h1 = document.querySelector("#chapter");
+        
+        // <!-- ? 대부분 사람들은 const 에 변수를 줄때 대문자로 사용한다.  //  BASE_COLOR
+        const BASE_COLOR = "rgb(52, 73, 255)";
+        // <!-- ! # rgb 입력에서 콤마(,) 다음에 공백이 한칸씩 있어야 합니다.
+            // rgb( 255, 244, 0) (O)
+            // rgb( 255,244,0) (X)
+        const OTHER_COLOR = "#7f8c8d";
+
+        // 왜 BASE_COLOR에 #ffff 형식을 사용하면 동작하지 않나요?
+        //  JS just works with rbg 
+    //<!-- @ JS에서 동작할땐 rgb값을 쓰는 것이 JS문법인가보다.
+    //<!-- @ init 함수에 h1.style.color = BASE_COLOR;  객체에 변화를 줘서 그런듯.
+    //<!-- so) BASE_COLOR 에는 반드시 rgb 로 넣어야 한거 같다.
+
+
+        
+        function handleClicks(){
+            const currentColor = h1.style.color;
+            if(currentColor === BASE_COLOR){
+                h1.style.color = OTHER_COLOR;
+            }else{
+                h1.style.color = BASE_COLOR;
+            }
+        }
+
+        function init (){
+            h1.style.color = BASE_COLOR;
+            h1.addEventListener("click", handleClicks);
+        }
+        
+        init(); /* 함수 실행  */
+
+        // <!-- ! 위와같이 javaScript 로 CSS 를 작업하는건 추천하지 않는다.
+        // <!-- # 추천하는 방식은 신경 쓰이는것들은 분리해서 관리히자
+        // <!-- so) HTML 작업은 HTML 문서에서 // CSS 는 CSS 에서 따로
+        // <!-- so) javaScript 는 로직을 처리하는데 사용해야한다. // 웹사이트의 스타일을 처리하는걸 원치 않는다.
+        
+//<!-- that is)         const RIGHT = document.querySelector("#rightWay");
+//<!-- that is)         const CLICKED_CLASS = "clicked";
+
+//<!-- that is)          function handleClickTwo(){
+//<!-- that is)              const currentClass = RIGHT.className ;
+//<!-- that is)              if(currentClass !== CLICKED_CLASS){     
+                                                                    /* <!-- $ 여기서 !== 같지 않으면 의미 */
+//<!-- that is)                  RIGHT.className = CLICKED_CLASS;
+//<!-- that is)              }else{
+//<!-- that is)                  RIGHT.className = "";           
+                                                                    /* classname 을 삭제 안해도 공백이면 안들어가니.. */
+//<!-- that is)              }
+//<!-- that is)          }
+//<!-- that is)          function inited(){
+//<!-- that is)                  RIGHT.addEventListener("click",handleClickTwo)
+//<!-- that is)              }
+//<!-- that is)          inited();
+
+        // <!-- so) 이런식이 JavaScript 를 수행해야 하는거야.  // 조금만 수정 - class 이름으로만 조금만 수정해주는거지
+        // <!-- so) 이런식이면 color가 뭔지 CSS 뭔지 아무것도 신경쓰지 아니하도록
+        
+        // <!-- ! 단 이방법도 그다지 유쾌하지만은 아니하다.
+        // <!-- ? #rightWay 은 .btn 이라는 className도 가지고 있는데  클릭을하게 되면 .btn 클래스는 사라지고   .clicked 라는 클래스로만..호출된다.
+        // <!-- @   즉  이전 클래스를 존중하지 않는거지.
+        // <!-- @ class 에 있어서 우린 독재자가 되어야해  // 모든 클래스 네임을 바꾸고 지울거야.
+        
+        // <!-- that is) 문제는 replacing 인데 그걸 해결하기 위해 필요한건 classList 라는 놈이야
+        // <!-- that is) classList 는 method 를 가져 // 즉  함수들을 사용 할 수 있지.
+            // 메서드(method) 또는 멤버 함수(member function)는 객체 지향 프로그래밍에서 객체과 관련된 서브 루틴 (또는 함수)이며 데이터와 멤버 변수에 대한 접근 권한을 갖는다.
+            // 클래스 기반 언어에서 클래스 내부에 정의되어 있다
+            // 메서드는 런타임 중에 클래스 인스턴스 (또는 클래스 객체)에 저장되어 있는 데이터에 접근할 수 있는 특수 속성을 가지고 있다
+
+
+            const RIGHT = document.querySelector("#rightWay");
+        const CLICKED_CLASS = "clicked";
+
+        function handleClickTwo(){
+            const hasclass = RIGHT.classList.contains(CLICKED_CLASS) ;    /*  <!-- @ 체크 할 때에는  한개의 class 로만 체크해야해서 수정해줘야 함...  */
+
+            if(hasclass){                               /*<!-- !  if ( !hasclass) 일때  ! 가 들어가면 반대 */
+                RIGHT.classList.remove(CLICKED_CLASS);
+            }else{
+                RIGHT.classList.add(CLICKED_CLASS);          /*<!-- # 이부분에서 CLICKED_CLASS의 변수인 .clicked 클래스네임만 삭제 시켜주니 // 전처럼 .btn class를 제거 할 수 없으므로 살아남음.*/
+            }                                                   /* <!-- ! 그럼 여기서 2개의 class 가 존재해버려서 항상 currentClass !== CLICKED_CLASS 맞지 않으니 clicked 가 사라지지 않고 계속 존재...해버림 // 그래서 수정*/
+        }                                                       /* <!-- @ contains라고 불리는 객체가 필요해  // value 가 있는지를 체크해주지. */
+        function inited(){
+                RIGHT.addEventListener("click",handleClickTwo);
+            }
+        inited();
+        
+
+        // <!-- todo ) 마지막으로 같은 방식이지만 깔끔하게 코드를 짤려면   toggle 함수를 사용해줘야해
+        // <!-- $ toggle || 우리가 했던 같은 일을 요약 해준다. 우리가 뭘 했지?
+        // <!-- $ toggle || 변수명으로 지정한 클래스가 있는지 체크해서 있으면 add // 아니면 remove 를 해주는 거야.
+
+//<!-- that is)     function handleClickTwo( hasclass 를 변수를 갖고 // if문을 사용한 함수를){}  
+
+//<!-- that is)     toggle 을 이용해서
+
+//<!-- that is)     function handleClickTwo(){
+//<!-- that is)         title.classList.toggle(CLICKED_CLASS);
+//<!-- that is)             }
+
+    </script>
+</body>
+</html>

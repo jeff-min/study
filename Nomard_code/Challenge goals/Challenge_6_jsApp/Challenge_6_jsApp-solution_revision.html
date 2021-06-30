@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge_6_jsApp-solution_revision</title>
+</head>
+<body>
+    <iframe src="https://codesandbox.io/embed/day-ten-solution-fnylk?fontsize=14&hidenavigation=1&theme=dark"
+      style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+      title="Day Ten Solution"
+      allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+    >
+    </iframe>
+    <h1>Random Number Game</h1>
+    <div>
+      <h3 class="js-title">Generate a number between 0 and <span>10</span></h3> <!-- # js-title 중에서도 바뀌는 부분은 span 처리 -->
+      <datalist id="number">
+        <option value="50"></option>
+        <option value="100"></option>
+        <option value="150"></option>
+        <option value="200"></option>
+      </datalist>
+      <input
+        list="number"
+        id="js-range"
+        type="range"
+        min="5"
+        max="200"
+        value="5"
+        step="5"
+      />
+    </div>
+    <form id="js-guess">
+      <label>Guess the number:</label>
+      <input type="number" max="200" min="5" />
+      <button>Play!</button>
+    </form>
+    <div id="js-result">
+      <span></span>     <!-- # 변하는 값이나 // 빈공간은 다 span 처리 -->
+    </div>
+    <script src="js/Challenge_6_jsApp-solution_revision.js"></script>
+
+
+</body>
+</html>

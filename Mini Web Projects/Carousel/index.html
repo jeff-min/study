@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carousel</title>
+    <link rel="stylesheet" href="css/Carousel.css"> 
+</head>
+<body>
+    <div class="wrap">
+        
+        <div class="slideImage">
+            <div class="number-text">1 / 4</div>
+            <img src="images/image-1.png" alt="">
+            <div class="caption-text">Caption ONE</div>
+        </div>
+        <div class="slideImage">
+            <div class="number-text">2 / 4</div>
+            <img src="images/image-2.png" alt="">
+            <div class="caption-text">Caption TWO</div>
+        </div>
+        <div class="slideImage">
+            <div class="number-text">3 / 4</div>
+            <img src="images/image-3.png" alt="">
+            <div class="caption-text">Caption THREE</div>
+        </div>
+        <div class="slideImage">
+            <div class="number-text">4 / 4</div>
+            <img src="images/image-4.png" alt="">
+            <div class="caption-text">Caption FOUR</div>
+        </div>
+    <!-- Next and previous buttons -->
+        <button class="prev" onclick="plusSlides(-1)" >&#10094;</button>
+        <button class="next" onclick="plusSlides(1)">&#10095;</button>
+        <!-- onclick="plusSlides(-1)" -->
+        <!-- onclick="plusSlides(1)" -->
+
+        <div class="slide-Dot">
+            <button class="dot" onclick="currentSlide(1)"></button>
+            <button class="dot" onclick="currentSlide(2)"></button>
+            <button class="dot" onclick="currentSlide(3)"></button>
+            <button class="dot" onclick="currentSlide(4)"></button>
+        </div>
+    </div>
+    
+    <!-- test -->
+    <div class="test">
+        <div class="num"></div>
+        <div class="num"></div>
+        <div class="num"></div>
+    </div>
+    <script src="js/Carousel.js"></script>
+</body>
+
+</html>

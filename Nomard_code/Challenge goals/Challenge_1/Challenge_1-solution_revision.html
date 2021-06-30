@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Challenge_1-solution_revision</title>
+    </head>
+    <!-- 
+제목의 텍스트는 마우스가 제목 위에있을 때 변경되어야합니다.
+제목의 텍스트는 마우스가 떠날 때 변경되어야합니다.
+창 크기가 조정되면 제목이 변경되어야합니다.
+마우스 오른쪽 버튼을 클릭하면 제목도 변경됩니다.
+제목의 색상은 색상 배열의 색상에서 가져와야합니다.
+.css 또는 .html 파일을 변경하지 마십시오.
+모든 함수 핸들러는 "superEventHandler"내부에 있어야합니다.
+요구 사항 중 하나라도 충족되지 않으면 ❌를 받게됩니다.
+
+-->
+ <!-- # File  - > Fork this Sandbox.            // my drafts     왼쪽  
+      # share - > embed -> copy embed code      // iframe        오른쪽   -->
+    <body>
+        <iframe src="https://codesandbox.io/embed/day-three-solution-3n53e?fontsize=14&hidenavigation=1&theme=dark"
+        style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+        title="Day Three Solution"
+        allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+        sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts" 
+        >
+        </iframe>
+        <h1 id="title">
+        This is a static template, there is no bundler or bundling involved!
+        </h1>
+
+        <script>
+        const title = document.querySelector("#title");
+        const ArrayColor = ["blue", "red", "black", "green", "violet"];
+
+        const superEventHandler = {
+            handleIn: function () {
+            // title.style.color = "blue";
+            title.style.color = ArrayColor[0];
+            title.innerHTML = "mouseover";
+            },
+
+            handleOut: function () {
+            // title.style.color = "red";
+            title.style.color = ArrayColor[1];
+            title.innerHTML = "mouseout";
+            },
+
+            handleResize: function () {
+            // title.style.color = "black";
+            title.style.color = ArrayColor[2];
+            title.innerHTML = "resize";
+            },
+
+            handleClick: function () {
+            // title.style.color = "green";
+            title.style.color = ArrayColor[3];
+            title.innerHTML = "mousedown";
+            },
+
+            handleContext: function () {
+            // title.style.color = "violet";
+            title.style.color = ArrayColor[4];
+            title.innerHTML = " contextmenu | That was a right click!";
+            }
+        };
+
+        title.addEventListener("mouseover", superEventHandler.handleIn);
+        title.addEventListener("mouseout", superEventHandler.handleOut);
+        window.addEventListener("resize", superEventHandler.handleResize);
+        window.addEventListener("mousedown", superEventHandler.handleClick);
+        window.addEventListener("contextmenu", superEventHandler.handleContext);
+        
+        
+        </script>
+    </body>
+</html>
